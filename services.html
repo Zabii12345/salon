@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>All Services | Elite Studio Men's Salon – Best Barber in Karachi</title>
+  <meta name="description" content="Explore every service at Elite Studio Men's Salon in Nazimabad, Karachi — fades, beard grooming, hair colouring, shaves and more. Rated 4.9★." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="https://i.postimg.cc/JmVXY5h2/image.png" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg: #FFFFFF;
+      --bg-secondary: #F8F8F8;
+      --text-primary: #121212;
+      --text-secondary: #5F5F5F;
+      --accent: #B8860B;
+      --dark: #121212;
+      --border: #ECECEC;
+      --radius-sm: 12px;
+      --radius-md: 20px;
+      --radius-lg: 32px;
+      --radius-pill: 999px;
+      --max: 1280px;
+      --shadow-card: 0 20px 40px -12px rgba(0,0,0,0.08);
+      --shadow-hover: 0 30px 60px -20px rgba(0,0,0,0.14);
+    }
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text-primary);
+      overflow-x: hidden;
+      line-height: 1.5;
+    }
+    img, svg { display: block; max-width: 100%; }
+    a { text-decoration: none; color: inherit; }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 40px; }
+    @media (max-width: 900px) { .wrap { padding: 0 24px; } }
+
+    /* ----- nav (compact on mobile) ----- */
+    .nav-shell {
+      position: fixed;
+      top: 16px;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      z-index: 100;
+      transition: top 0.3s;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 44px;
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(16px) saturate(160%);
+      -webkit-backdrop-filter: blur(16px) saturate(160%);
+      border: 1px solid rgba(255,255,255,0.5);
+      border-radius: var(--radius-pill);
+      padding: 12px 14px 12px 28px;
+      box-shadow: 0 20px 50px -12px rgba(0,0,0,0.18);
+      transition: padding 0.3s, gap 0.3s;
+    }
+    nav.shrink { padding: 8px 10px 8px 22px; gap: 32px; }
+
+    /* Mobile nav: ultra compact, single line, ellipsis */
+    @media (max-width: 900px) {
+      .nav-shell {
+        top: 10px;
+        padding: 0 10px;
+      }
+      nav {
+        padding: 4px 8px 4px 10px;
+        gap: 6px;
+        border-radius: 30px;
+        width: 100%;
+        max-width: 380px;
+        justify-content: space-between;
+        min-height: 36px;
+        box-shadow: 0 8px 24px -8px rgba(0,0,0,0.15);
+      }
+      nav.shrink {
+        padding: 3px 6px 3px 8px;
+        gap: 4px;
+        min-height: 32px;
+      }
+      .logo-img {
+        height: 26px;
+        width: 26px;
+        flex-shrink: 0;
+        border-width: 1.5px;
+      }
+      nav .brand-name {
+        font-size: 10px !important;
+        font-weight: 600;
+        letter-spacing: 0px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 100px;
+        display: block;
+        flex-shrink: 1;
+        min-width: 0;
+        line-height: 1.2;
+      }
+      .nav-cta {
+        font-size: 9px;
+        padding: 3px 10px;
+        flex-shrink: 0;
+        white-space: nowrap;
+        border-radius: 16px;
+        font-weight: 600;
+      }
+      .nav-links {
+        display: none !important;
+      }
+    }
+
+    .logo-img {
+      height: 50px;
+      width: 50px;
+      display: block;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid rgba(255,255,255,0.6);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 13.5px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      position: relative;
+      padding-bottom: 4px;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--text-primary); }
+    .nav-links a.active { color: var(--text-primary); font-weight: 600; }
+    .nav-links a.active::after {
+      content: ""; position: absolute; left: 0; right: 0; bottom: -2px;
+      height: 3px; border-radius: 2px; background: var(--accent);
+    }
+    .nav-cta {
+      background: var(--dark); color: #fff; font-size: 13px; font-weight: 600;
+      padding: 10px 24px; border-radius: var(--radius-pill);
+      transition: transform 0.25s, background 0.25s; white-space: nowrap;
+    }
+    .nav-cta:hover { transform: translateY(-1px); background: #000; }
+
+    /* ----- page header (mobile optimized) ----- */
+    .page-header {
+      position: relative;
+      min-height: 46vh;
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; text-align: center; padding-top: 128px;
+    }
+    .page-header-bg {
+      position: absolute; inset: 0;
+      background: url('https://lh3.googleusercontent.com/gps-cs-s/AHRPTWktciqSC5SxPrmy-_pFP_vhq7JX9VLxWfQcZLWj-3PYOPgK7oQbQu6HQvUV1xM056LfVX_ciJQPRMgMTaQJZ6pBe1tEk1omMjR8vF-IuVnn8LltyVYRY3TOi508j1jqo60K4OFgVfueXvGU=s1360-w1360-h1020-rw') center center / cover no-repeat;
+    }
+    .page-header::before {
+      content: ""; position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.70) 0%, rgba(0,0,0,0.40) 40%, rgba(0,0,0,0.85) 100%);
+    }
+    /* Mobile header adjustments */
+    @media (max-width: 900px) {
+      .page-header {
+        min-height: 35vh;
+        padding-top: 80px;
+      }
+      .page-header-bg {
+        background-size: cover;
+        background-position: center;
+      }
+      .page-header h1 {
+        font-size: 28px;
+      }
+      .page-header p {
+        font-size: 14px;
+      }
+      .eyebrow {
+        font-size: 10px;
+        padding: 4px 12px;
+        letter-spacing: 1.2px;
+        margin-bottom: 14px;
+      }
+    }
+    .page-header-inner { position: relative; z-index: 2; max-width: 700px; padding: 0 24px; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,0.10); border: 1px solid rgba(255,255,255,0.18);
+      padding: 8px 20px; border-radius: var(--radius-pill); font-size: 12px;
+      font-weight: 600; letter-spacing: 1.6px; margin-bottom: 22px; text-transform: uppercase;
+    }
+    .page-header h1 {
+      font-size: clamp(30px, 4.5vw, 50px); font-weight: 700; line-height: 1.12;
+      letter-spacing: -1.2px; margin-bottom: 16px;
+    }
+    .page-header p { font-size: 16px; color: rgba(255,255,255,0.85); line-height: 1.6; }
+
+    section { padding: 100px 0; }
+    @media (max-width: 900px) { section { padding: 50px 0; } }
+
+    .back-link {
+      display: inline-flex; align-items: center; gap: 8px; margin-bottom: 32px;
+      font-size: 13.5px; font-weight: 600; color: var(--text-secondary);
+    }
+    .back-link:hover { color: var(--text-primary); }
+    @media (max-width: 900px) {
+      .back-link {
+        font-size: 12px;
+        margin-bottom: 20px;
+      }
+    }
+
+    /* ----- services grid (full) ----- */
+    .services-grid {
+      display: grid; grid-template-columns: repeat(4,1fr); gap: 24px;
+    }
+    @media (max-width: 1100px) { .services-grid { grid-template-columns: repeat(3,1fr); } }
+    @media (max-width: 768px) { 
+      .services-grid { grid-template-columns: repeat(2,1fr); gap: 10px; } 
+    }
+    @media (max-width: 480px) { .services-grid { grid-template-columns: repeat(2,1fr); gap: 10px; } }
+
+    .service-card {
+      background: #fff; border: 1px solid var(--border); border-radius: var(--radius-lg);
+      padding: 0; overflow: hidden; display: flex; flex-direction: column;
+      transition: transform 0.35s cubic-bezier(.2,.8,.2,1), box-shadow 0.35s;
+    }
+    .service-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-hover); }
+    .service-card .service-img { height: 180px; object-fit: cover; width: 100%; background: #eaeaea; margin: 0; }
+    .service-card .service-body { padding: 20px 22px 24px; display: flex; flex-direction: column; gap: 12px; flex: 1; }
+    .service-card h3 { font-size: 19px; font-weight: 600; }
+    .service-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+    .service-arrow {
+      font-size: 13px; font-weight: 600; color: var(--accent);
+      display: inline-flex; align-items: center; gap: 6px; margin-top: auto; transition: gap 0.25s;
+    }
+    .service-card:hover .service-arrow { gap: 11px; }
+    @media (max-width: 768px) {
+      .service-card .service-img { height: 100px; }
+      .service-card .service-body { padding: 10px 12px 14px; gap: 4px; }
+      .service-card h3 { font-size: 13px; }
+      .service-card p { font-size: 10px; line-height: 1.3; }
+      .service-arrow { font-size: 10px; }
+    }
+
+    /* ----- footer (black) ----- */
+    footer { background: #0b0b0b; color: rgba(255,255,255,0.7); padding: 60px 0 24px; }
+    .footer-top { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+    @media (max-width: 900px) { .footer-top { grid-template-columns: 1fr 1fr; gap: 28px; } }
+    .footer-brand .logo-img { height: 45px; margin-bottom: 10px; border-radius: 50%; object-fit: cover; }
+    .footer-brand p { font-size: 13px; line-height: 1.6; color: rgba(255,255,255,0.5); }
+    footer h5 { color: #fff; font-size: 13px; font-weight: 600; margin-bottom: 14px; letter-spacing: 0.5px; }
+    footer ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    footer ul li { font-size: 13px; color: rgba(255,255,255,0.55); }
+    footer ul li a:hover { color: var(--accent); }
+    .footer-socials { display: flex; gap: 14px; margin-top: 8px; }
+    .footer-socials a { display: inline-block; transition: opacity 0.2s; }
+    .footer-socials a:hover { opacity: 0.7; }
+    .footer-socials img { width: 22px; height: 22px; filter: brightness(0) invert(1); }
+    .footer-bottom {
+      display: flex; justify-content: space-between; align-items: center; padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.08); font-size: 12px; color: rgba(255,255,255,0.4);
+      flex-wrap: wrap; gap: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="nav-shell">
+  <nav id="navbar">
+    <img class="logo-img" src="https://i.postimg.cc/JmVXY5h2/image.png" alt="Elite Studio Men's Salon Logo" />
+    <span class="brand-name" style="font-weight:700; font-size:17px; letter-spacing:0.5px; color:var(--dark);">Elite Studio Men's Salon</span>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#services" class="active">Services</a></li>
+      <li><a href="index.html#gallery">Gallery</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#visit">Visit Us</a></li>
+    </ul>
+    <a href="tel:+923170252199" class="nav-cta">Call Now</a>
+  </nav>
+</div>
+
+<!-- PAGE HEADER -->
+<section class="page-header" style="padding:0;">
+  <div class="page-header-bg"></div>
+  <div class="page-header-inner">
+    <span class="eyebrow">WHAT WE OFFER</span>
+    <h1>All Our Services</h1>
+    <p>Every service built around precision, consistency, and a genuinely relaxed experience.</p>
+  </div>
+</section>
+
+<!-- FULL SERVICES GRID -->
+<section>
+  <div class="wrap">
+    <a href="index.html#services" class="back-link">← Back to Home</a>
+    <div class="services-grid">
+      <div class="service-card"><img class="service-img" src="https://mens-talk.online/wp-content/uploads/2023/08/805542dac2c1acce63e8e6d3d6bdc44a.jpg" alt="Skin Fade" /><div class="service-body"><h3>Skin Fade</h3><p>Razor-sharp fades with seamless, professional blending.</p><span class="service-arrow">Learn more →</span></div></div>
+      <div class="service-card"><img class="service-img" src="https://i.pinimg.com/originals/d0/71/a5/d071a514cffbf72ab4fa21243d512f42.jpg" alt="Buzz Cut" /><div class="service-body"><h3>Buzz Cut</h3><p>Classic, clean, and low-maintenance — sharp as ever.</p><span class="service-arrow">Learn more →</span></div></div>
+      <div class="service-card"><img class="service-img" src="https://vagazine.com/vaga_v3/wp-content/uploads/2024/10/guys_with_silve_hair_spray_hairspray-1.png" alt="Hair Coloring" /><div class="service-body"><h3>Hair Coloring</h3><p>Premium colour services for a fresh, modern look.</p><span class="service-arrow">Learn more →</span></div></div>
+      <div class="service-card"><img class="service-img" src="https://i.pinimg.com/originals/59/b1/6c/59b16c3b10a7fb605aa682ecbde30259.jpg" alt="Hair Shape Up" /><div class="service-body"><h3>Hair Shape Up</h3><p>Precision edge-ups and shape-ups for sharp definition.</p><span class="service-arrow">Learn more →</span></div></div>
+      <div class="service-card"><img class="service-img" src="https://media.istockphoto.com/id/495666415/photo/stylist-shaves-mans-head.jpg?s=612x612&w=0&k=20&c=nuBmjVrzHfHcV88uXzMecZxsfhG8FtsZVbdIkKXakcw=" alt="Head Shave" /><div class="service-body"><h3>Head Shave</h3><p>Expert wet shave for a perfectly smooth, clean finish.</p><span class="service-arrow">Learn more →</span></div></div>
+      <div class="service-card"><img class="service-img" src="https://haircutinspiration.com/wp-content/uploads/Medium-Side-Brush-Up-1280x1784.jpg" alt="Scissor Cut" /><div class="service-body"><h3>Scissor Cut</h3><p>Textured, layered cuts with expert scissor work.</p><span class="service-arrow">Learn more →</span></div></div>
+      <div class="service-card"><img class="service-img" src="https://i.pinimg.com/736x/44/bb/dd/44bbdd169ad4373c93f3ac87067ed32f.jpg" alt="Waxing" /><div class="service-body"><h3>Waxing</h3><p>Professional waxing services for a polished look.</p><span class="service-arrow">Learn more →</span></div></div>
+      <div class="service-card"><img class="service-img" src="https://media.istockphoto.com/id/1354218026/photo/young-bearded-man-getting-haircut-by-hairdresser.jpg?s=170667a&w=0&k=20&c=7YTZNyrYFc1j2TzKhqrJrRGxRHm2m-dv4ipnzQNCeTE=" alt="Hair Cuts" /><div class="service-body"><h3>Hair Cuts</h3><p>Everything from classic to contemporary — cut with care.</p><span class="service-arrow">Learn more →</span></div></div>
+      <div class="service-card"><img class="service-img" src="https://hp-esperanto.com/wp-content/uploads/2026/01/Barberian_-_Beard_Trim.webp" alt="Beard Trim" /><div class="service-body"><h3>Beard Trim</h3><p>Luxury beard sculpting, trimming and hot towel finish.</p><span class="service-arrow">Learn more →</span></div></div>
+      <div class="service-card"><img class="service-img" src="https://media.istockphoto.com/id/1169100049/photo/man-mith-mustaches-having-a-shave-razor-in-hands-of-specialist-barber-young-man-getting-an.jpg?s=170667a&w=0&k=20&c=cXD6KuAFcutUFvzbUhGhsh3DckVVxJepoJ3n0PF7cRg=" alt="Shaves" /><div class="service-body"><h3>Shaves</h3><p>Classic hot towel shaves for the ultimate refresh.</p><span class="service-arrow">Learn more →</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img class="logo-img" src="https://i.postimg.cc/JmVXY5h2/image.png" alt="Elite Studio Men's Salon Logo" />
+        <p>Premium modern barbering in the heart of Nazimabad, Karachi.</p>
+        <p style="margin-top:12px; font-size:13px; color:rgba(255,255,255,0.4);">⭐ 4.9 · 12+ reviews</p>
+      </div>
+      <div>
+        <h5>Navigate</h5>
+        <ul><li><a href="index.html">Home</a></li><li><a href="index.html#services">Services</a></li><li><a href="index.html#gallery">Gallery</a></li><li><a href="index.html#about">About</a></li><li><a href="index.html#visit">Visit Us</a></li></ul>
+      </div>
+      <div>
+        <h5>Hours</h5>
+        <ul><li>Monday: 8:00am–10:00pm</li><li>Tuesday: 8:00am–10:00pm</li><li>Wednesday: 8:00am–10:00pm</li><li>Thursday: 8:00am–10:00pm</li><li>Friday: 8:00am–10:00pm</li><li>Saturday: 8:00am–10:00pm</li><li>Sunday: 8:00am–10:00pm</li></ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul><li><a href="tel:+923170252199">+92 317 0252199</a></li><li>Plot No. 5/30, Block No, 5-A Paposh Nagar Rd</li><li>Sarafa Bazar Block 5 A Block 5 Nazimabad</li><li>Karachi, 74600, Pakistan</li></ul>
+        <div class="footer-socials">
+          <a href="https://www.instagram.com/elitestudiomensalon/" target="_blank"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z'/%3E%3C/svg%3E" alt="Instagram" /></a>
+          <a href="https://web.facebook.com/profile.php?id=61588005961086" target="_blank"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z'/%3E%3C/svg%3E" alt="Facebook" /></a>
+          <a href="https://wa.me/923170252199" target="_blank"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z'/%3E%3C/svg%3E" alt="WhatsApp" /></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Elite Studio Men's Salon. All rights reserved.</span>
+      <span>Karachi · Nazimabad</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 40) nav.classList.add('shrink');
+    else nav.classList.remove('shrink');
+  });
+</script>
+</body>
+</html>
