@@ -531,7 +531,7 @@
       }
     }
 
-    /* Stats grid – mobile: 4 in a row, small font, no overflow */
+    /* Stats grid – mobile: 2 in a row, small & professional */
     .stats-grid {
       display: grid;
       grid-template-columns: repeat(4,1fr);
@@ -539,19 +539,22 @@
     }
     @media (max-width: 900px) {
       .stats-grid {
-        grid-template-columns: repeat(4,1fr);
-        gap: 5px;
+        grid-template-columns: repeat(2,1fr);
+        gap: 8px;
         padding: 0 4px;
       }
       .stat-card {
-        padding: 8px 4px;
-        min-height: 70px;
+        padding: 10px 6px;
+        min-height: 60px;
         border-radius: 12px;
         background: var(--bg-secondary);
         border: 1px solid var(--border);
         text-align: center;
         transition: none;
         box-shadow: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
       }
       .stat-card:hover {
         transform: none;
@@ -559,13 +562,13 @@
         background: var(--bg-secondary);
       }
       .stat-num {
-        font-size: 14px !important;
+        font-size: 16px !important;
         font-weight: 700;
-        letter-spacing: -0.5px;
+        letter-spacing: -0.3px;
         line-height: 1.2;
       }
       .stat-label {
-        font-size: 7px !important;
+        font-size: 8px !important;
         margin-top: 2px;
         font-weight: 500;
         color: var(--text-secondary);
@@ -574,7 +577,7 @@
         line-height: 1.3;
       }
       .stat-card .stat-num span {
-        font-size: 14px !important;
+        font-size: 16px !important;
       }
     }
     .stat-card {
@@ -687,6 +690,12 @@
       .service-card h3 { font-size: 13px; }
       .service-card p { font-size: 10px; line-height: 1.3; }
       .service-arrow { font-size: 10px; }
+    }
+    /* Desktop only: increase service image height to 1.5x (180px -> 270px) */
+    @media (min-width: 769px) {
+      .service-card .service-img {
+        height: 270px !important;
+      }
     }
     .view-all-btn {
       display: inline-block;
