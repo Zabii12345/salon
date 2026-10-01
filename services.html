@@ -265,7 +265,9 @@
     footer { background: #0b0b0b; color: rgba(255,255,255,0.7); padding: 60px 0 24px; }
     .footer-top { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
     @media (max-width: 900px) { .footer-top { grid-template-columns: 1fr 1fr; gap: 28px; } }
-    .footer-brand .logo-img { height: 45px; margin-bottom: 10px; border-radius: 50%; object-fit: cover; }
+    .footer-brand .brand-row {display: flex; align-items: center; gap: 10px;}
+    .footer-brand .logo-img { height: 40px; width: 40px; border-radius: 50%; object-fit: cover;  border: 2px solid rgba(255,255,255,0.15);}
+    .footer-brand .brand-name {font-weight: 600; font-size: 15px;  color: #fff;  letter-spacing: 0.5px;}
     .footer-brand p { font-size: 13px; line-height: 1.6; color: rgba(255,255,255,0.5); }
     footer h5 { color: #fff; font-size: 13px; font-weight: 600; margin-bottom: 14px; letter-spacing: 0.5px; }
     footer ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
@@ -333,10 +335,13 @@
   <div class="wrap">
     <div class="footer-top">
       <div class="footer-brand">
-        <img class="logo-img" src="https://i.postimg.cc/JmVXY5h2/image.png" alt="Elite Studio Men's Salon Logo" />
-        <p>Premium modern barbering in the heart of Nazimabad, Karachi.</p>
-        <p style="margin-top:12px; font-size:13px; color:rgba(255,255,255,0.4);">⭐ 4.9 · 12+ reviews</p>
-      </div>
+  <div class="brand-row">
+    <img class="logo-img" src="https://i.postimg.cc/JmVXY5h2/image.png" alt="Elite Studio Men's Salon Logo" />
+    <span class="brand-name">Elite Studio Men's Salon</span>
+  </div>
+  <p>Premium modern barbering in the heart of Nazimabad, Karachi.</p>
+  <p style="margin-top:12px; font-size:13px; color:rgba(255,255,255,0.4);">⭐ 4.9 · 12+ reviews</p>
+</div>
       <div>
         <h5>Navigate</h5>
         <ul><li><a href="index.html">Home</a></li><li><a href="index.html#services">Services</a></li><li><a href="index.html#gallery">Gallery</a></li><li><a href="index.html#about">About</a></li><li><a href="index.html#visit">Visit Us</a></li></ul>
